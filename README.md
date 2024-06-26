@@ -2,7 +2,7 @@
 
 **Text Inspector** é uma ferramenta online que permite contar caracteres e palavras em um texto, além de extrair texto de arquivos PDF para contar o número de caracteres.
 
-<p style="text-align:center;">
+<p align="center">
   <img src="./assets/logo.png" alt="ícone do app" width="100"/>
 </p>
 
