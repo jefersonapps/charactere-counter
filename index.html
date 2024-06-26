@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/logo.png" type="image/*" />
+    <title>Text Inspector</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+
+    <script type="module" src="main.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"
+      integrity="sha512-ml/QKfG3+Yes6TwOzQb7aCNtJF4PUyha6R3w8pSTo/VJSywl7ZreYvvtUso7fKevpsI+pYVVwnu82YO0q3V6eg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="container gap">
+    <h1 class="mt-4">Contador de Caracteres e Palavras</h1>
+    <span
+      >Created by
+      <a
+        href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K9602447P6"
+        target="_blank"
+        >Jeferson Leite
+      </a>
+    </span>
+
+    <textarea
+      id="text"
+      class="form-control"
+      placeholder="Cole seu texto aqui..."
+    ></textarea>
+    <br />
+
+    <div
+      class="d-flex flex-sm-row flex-column align-items-center gap select-none"
+    >
+      <div class="d-flex align-items-center gap" style="padding-bottom: 15px">
+        <input type="checkbox" id="spaces" />
+        <label for="spaces" class="mb-n1">Contar espaços</label>
+      </div>
+    </div>
+
+    <div
+      class="pdfwork d-flex gap bg-dark flex-column flex-md-row center flex-wrap p-2 rounded"
+    >
+      <div class="full">
+        <input id="input-file" type="file" class="selectpdf" />
+      </div>
+
+      <div class="d-flex center">
+        <label for="pwd">Senha&nbsp;(se&nbsp;houver):&nbsp;&nbsp;</label>
+
+        <input
+          type="password"
+          class="pwd form-control bg-dark text-white mb-2"
+          id="pwd"
+          placeholder="Digite a senha"
+        />
+        <div class="input-group-append">
+          <button id="togglePassword">
+            <i class="fa fa-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <button class="upload">Enviar</button>
+      <div class="afterupload">
+        <div class="d-flex gap">
+          <label for="select">Selecionar Página: &nbsp;</label>
+          <select
+            class="selectpage bg-dark text-white form-control"
+            id="select"
+          ></select>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="results"
+      class="d-flex flex-column align-items-center mt-5 hidden font-bold"
+    ></div>
+
+    <!-- Modal -->
+    <div id="modal">
+      <div class="loader-spinner">
+        <div class="spinner-border text-primary" role="status">
+          <span class="sr-only">Carregando...</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

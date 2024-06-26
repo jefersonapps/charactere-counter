@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #202024;
+    color: #fff;
+}
+#text {
+    margin-top: 20px;
+    background-color: #495057;
+    color: #fff;
+}
+#result, #wordResult {
+    margin-top: 20px;
+}
+.select-none {
+    user-select: none;
+}
+
+.bg-purple {
+  background-color: #8257e5;
+}
+
+.selectpage {
+  appearance: none;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI4Ij48cGF0aCBkPSJNMSAuOTVMNS45NSA1LjkgMTAuOS45NSIgc3Ryb2tlPSIjRkZGIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48L3N2Zz4=) no-repeat right 10px center;
+  background-size: 12px;
+  padding-right: 30px; /* Ajuste este valor conforme necessário */
+}
+
+.bg-purple-dark {
+  background-color: #202024;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+.center {
+  display: flex;
+  align-items: center;
+}
+.full {
+  overflow: hidden; 
+  width: fit-content;
+  position: relative;
+}
+.full input {
+  margin-bottom: 6px;
+}
+@media (max-width: 440px) { 
+  .full {
+    width: 100%;
+  }
+  .full::after {
+    content: '...';
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 6px;
+    background-color: #343a40;
+    position: absolute;
+    top: 10px;
+    right: -30px
+  }
+}
+
+
+.gap {
+    gap: 15px;
+}
+.pdfwork, .afterupload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+/* Add margin-top to all elements inside .pdfwork */
+.pdfwork * {
+    margin-top: 5px;
+}
+/* Hide the result section initially */
+.afterupload {
+    display: none;
+}
+
+
+/*Input File*/
+
+input[type="file"] {
+    position: relative;
+  }
+  
+  input[type="file"]::file-selector-button {
+    width: 150px;
+    color: transparent;
+  }
+
+  ::-ms-reveal {
+    filter: invert(100%);
+  }
+  
+  /* Faked label styles and icon */
+  input[type="file"]::before {
+    position: absolute;
+    pointer-events: none;
+    top: 10px;
+    left: 16px;
+    height: 20px;
+    width: 20px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
+}
+
+  
+  input[type="file"]::after {
+    position: absolute;
+    pointer-events: none;
+    top: 9px;
+    left: 40px;
+    color: white;
+    font-weight: bold;
+    content: "Importe PDF";
+  }
+  
+  /* ------- From Step 1 ------- */
+  
+  /* file upload button */
+  input[type="file"]::file-selector-button {
+    border-radius: 4px;
+    padding: 0 16px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #8257e5;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+    margin-right: 10px;
+    transition: background-color 200ms;
+  }
+  
+  /* file upload button hover state */
+  input[type="file"]::file-selector-button:hover {
+    background-color: #5e24e4;
+  }
+  
+  /* file upload button active state */
+  input[type="file"]::file-selector-button:active {
+    background-color: #5e24e4;
+  }
+
+  /*Botton*/
+
+  button {
+    border-radius: 4px;
+    padding: 0 16px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #8257e5;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+    margin-right: 10px;
+    transition: background-color 200ms;
+    color: white;
+    font-weight: bold;
+  }
+
+    /* button hover state */
+    button:hover {
+      background-color: #5e24e4;
+    }
+    
+    /*button active state */
+    button:active {
+      background-color: #5e24e4;
+    }
+
+    /*Checkbox*/
+
+    input[type="checkbox"] {
+      accent-color: #8257e5;
+    }
+
+
+  .input-group-append {
+    width: 30px;
+    margin-left: -8px;
+    margin-right: 10px;
+    margin-top: -4px;
+  }
+
+  #togglePassword {
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+  /*MOdal*/
+
+  #modal {
+    display: none; /* Inicialmente escondido */
+    position: fixed; /* Fixo na tela */
+    z-index: 1; /* Fica no topo */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    overflow: auto; /* Habilita scroll se necessário */
+    background-color: rgb(0,0,0); /* Fundo preto */
+    background-color: rgba(0,0,0,0.4); /* Fundo preto com opacidade */
+  }
+  
+  #modal .loader-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
